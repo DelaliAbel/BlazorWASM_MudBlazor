@@ -1,0 +1,40 @@
+﻿@page "/Users"
+
+<h3>Users</h3>
+<MudLayout>
+    <div>
+        <p>Bonjour à tous ceci est paragraphe juste pour faire un test.</p>
+    </div>
+    <MudMainContent Class="pt-16 px-16">
+        <MudContainer Class="mt-6">
+            <MudSelect Label="Select breakpoint" @bind-Value="breakpoint">
+                <MudSelectItem Value="@Breakpoint.Sm">Breakpoint.Sm</MudSelectItem>
+                <MudSelectItem Value="@Breakpoint.Md">Breakpoint.Md</MudSelectItem>
+                <MudSelectItem Value="@Breakpoint.Lg">Breakpoint.Lg</MudSelectItem>
+                <MudSelectItem Value="@Breakpoint.Xl">Breakpoint.Xl</MudSelectItem>
+            </MudSelect>
+            
+            <div>
+                <p>Bonjour à tous ceci est paragraphe juste pour faire un test.</p>
+            </div>
+            
+            <MudSwitch @bind-Checked="@preserveOpenState" Label="Preserve open state" Color="Color.Primary" Style="width:100%;" />
+            
+            <div>
+                <p>Bonjour à tous ceci est paragraphe juste pour faire un test.</p>
+            </div>
+
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool open = false;
+    bool preserveOpenState = false;
+    Breakpoint breakpoint = Breakpoint.Lg;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+}
